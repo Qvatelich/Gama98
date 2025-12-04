@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpBar : MonoBehaviour
+public class ShieldItem : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
