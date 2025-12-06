@@ -8,6 +8,7 @@ public sealed class PlayerController : MonoBehaviour
 
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Joystick _joystick;
+    [SerializeField] private Animator _anim;
     [SerializeField] private float _rotateSpeed;
 
     private bool _jump = true;
@@ -22,7 +23,12 @@ public sealed class PlayerController : MonoBehaviour
         //  float y = Input.GetAxisRaw("Vertical");
         float x = _joystick.Horizontal;
         float y = _joystick.Vertical;
-
+        /*if (x == 0 && y == 0)
+            _anim.Play("Idle");
+        else if (x == 0 && y == 0 && _jump)
+            _anim.Play("Run");
+        if (!_jump)
+            _anim.Play("Jump");*/
         Vector3 moveVector = (x * Camera.main.transform.right + y * Camera.main.transform.forward).normalized * 4f;
         moveVector.y = _rb.velocity.y;
         _rb.velocity = moveVector;
